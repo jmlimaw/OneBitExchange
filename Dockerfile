@@ -1,4 +1,4 @@
-FROM ruby:2.5.1
+FROM ruby:2.7.1
 
 # add nodejs and yarn dependencies for the frontend
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
@@ -18,9 +18,6 @@ RUN mkdir -p $INSTALL_PATH
 
 # Seta o nosso path como o diretório principal
 WORKDIR $INSTALL_PATH
-
-# Copia o nosso Gemfile para dentro do container
-COPY Gemfile ./
 
 # Seta o path para as Gems
 ENV BUNDLE_PATH /gems
